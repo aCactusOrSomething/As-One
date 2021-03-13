@@ -1,0 +1,8 @@
+-Don't recreate HTML elements every time you need to update them
+-you piece of shit. you can just update them without resetting them
+
+-man i just gonna yell at myself without having plans? damn
+-spaceplan has a good UI. take inspiration from it maybe
+-don't make everything look like a rounded button
+-this is a tech demo, so don't think *too* hard on the fine print. you're just making tests.
+-
