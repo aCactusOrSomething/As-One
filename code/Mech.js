@@ -79,7 +79,7 @@ export default class Mech extends Entity {
 
     //returns a simple, boring mech for debug purposes.
     static getSampleMech() {        
-        var head = new MechPart("Head", 0, 100, new Pilot("Alph", 100), [Act.XRay]);
+        var head = new MechPart("Head", 0, 100, new Pilot("Alph", 100), [Act.XRay,Act.HeatSeekingShot]);
         var lArm = new MechPart("Left Arm", 1, 100, new Pilot("Brittany", 100), [Act.Cannon,Act.Laser,Act.Shotgun,Act.Radiation]);
         var rArm = new MechPart("Right Arm", 1, 100, new Pilot("Charlie", 100), [Act.Cannon,Act.Laser,Act.Shotgun,Act.Radiation]);
         var lLeg = new MechPart("Left Leg", 2, 100, new Pilot("Olimar", 100), [Act.HullShielding,Act.CockpitShielding]);

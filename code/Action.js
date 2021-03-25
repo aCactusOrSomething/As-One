@@ -3,6 +3,7 @@
 import Damage from "./Damage.js";
 import UIComponent from "./UIComponent.js";
 import * as Eff from "./Effect.js";
+import Random from "./Random.js";
 
 export class Action {
 
@@ -44,7 +45,7 @@ export class Action {
         if(this.preExecute()) {
             return this.executeAct();
         } else {
-            return this.targets.toString() + " Was unable to perform " + this.info.name + ".";
+            return this.targets.toString() + " Was unable to perform do anything!";
         }
     }
 
@@ -331,6 +332,39 @@ export class Swap extends Action {
         const temp = this.instigators[0].pilot;
         this.instigators[0].pilot = this.instigators[1].pilot;
         this.instigators[1].pilot = temp;
+        return ret;
+    }
+}
+
+export class HeatSeekingShot extends Action {
+    static info = {
+        name: "Heat Seeking Shot",
+        flavor: "This attack hones in on a random pilot in your opponent's mech.",
+        src: "target-laser.svg"
+    };
+    static uiComponent = new UIComponent(this.info.name, this.info.flavor, this.info.src);
+
+    static req_inst = [1, 1, 0, 0];
+    static req_targ = [[false,true], -1];
+
+    static damage = [20,20];
+
+    executeAct() {
+        const me=this;
+        var ret = this.instigators.toString() + " attempts to use " + this.constructor.info.name + " on " + this.targets.toString() + ".";
+        var viableTargets = [];
+        for(var i = 0; i < this.targets.length; i++) {
+            if(this.targets[i].pilot.aliveCheck()) {
+                viableTargets.push(this.targets[i]);
+            }
+        }
+        if(viableTargets.length == 0) {
+            return ret + "<br>...but it missed!";
+        }
+
+        var index = Random.randBetween(0,viableTargets.length);
+        var result = viableTargets[index].getHit(new Damage(this.constructor.damage[0],this.constructor.damage[1], me));
+        if(result.updateText != "") ret += "<br>" + viableTargets[index].name + ": " + result.updateText;
         return ret;
     }
 }
