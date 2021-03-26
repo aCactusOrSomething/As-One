@@ -9,7 +9,7 @@ export class Action {
 
     static info = {
         name: "action",
-        flavor: "you cannot do anything with this action.",
+        flavor: "you cannot do anything with this action. it is either a placeholder, or an error.",
         src: "uncertainty.svg"
     };
 

@@ -1,6 +1,6 @@
 import * as Act from "./Action.js";
 import Entity from "./Entity.js";
-import MechPart from "./MechPart.js";
+import * as MechParts from "./MechPart.js";
 import Pilot from "./Pilot.js";
 import * as Eff from "./Effect.js";
 import Random from "./Random.js";
@@ -79,11 +79,11 @@ export default class Mech extends Entity {
 
     //returns a simple, boring mech for debug purposes.
     static getSampleMech() {        
-        var head = new MechPart("Head", 0, 100, new Pilot("Alph", 100), [Act.XRay,Act.HeatSeekingShot]);
-        var lArm = new MechPart("Left Arm", 1, 100, new Pilot("Brittany", 100), [Act.Cannon,Act.Laser,Act.Shotgun,Act.Radiation]);
-        var rArm = new MechPart("Right Arm", 1, 100, new Pilot("Charlie", 100), [Act.Cannon,Act.Laser,Act.Shotgun,Act.Radiation]);
-        var lLeg = new MechPart("Left Leg", 2, 100, new Pilot("Olimar", 100), [Act.HullShielding,Act.CockpitShielding]);
-        var rLeg = new MechPart("Right Leg", 2, 100, new Pilot("Louie", 100), [Act.HullShielding,Act.CockpitShielding]);
+        var head = new MechParts.HeadBasic(new Pilot("Alph", 100));
+        var lArm = new MechParts.ArmBasic(new Pilot("Brittany", 100));
+        var rArm = new MechParts.ArmBasic(new Pilot("Charlie", 100));
+        var lLeg = new MechParts.LegBasic(new Pilot("Olimar", 100));
+        var rLeg = new MechParts.LegBasic(new Pilot("Louie", 100));
 
         var assembledParts = [head, lArm, rArm, lLeg, rLeg];
 
