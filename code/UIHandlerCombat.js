@@ -18,7 +18,7 @@ var queueButtons = document.getElementById("queueButtons");
 var combatLogs = document.getElementById("combatLogs");
 var contextClue = document.getElementById("contextClue");
 
-var UIHandler = {
+var UIHandlerCombat = {
     state: 0, //see comment above
     action: 0, //store the CLASS somehow i guess. unless it's state 3
     instigators: [], //update these two in states 1&2
@@ -310,7 +310,7 @@ var UIHandler = {
     }
 }
 
-export default UIHandler;
+export default UIHandlerCombat;
 
 function clearNode(node) {
     while (node.firstChild) {

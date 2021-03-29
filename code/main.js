@@ -1,23 +1,39 @@
 import Mech from "./Mech.js";
 import * as Act from "./Action.js";
-import UIHandler from "./UIHandler.js";
+import UIHandlerCombat from "./UIHandlerCombat.js";
+import Dashing from './dashing.js';
 
-var p1status = document.getElementById("p1status");
-var actionList = document.getElementById("actionList");
-var actionQueue = document.getElementById("actionQueue");
-var p2status = document.getElementById("p2status");
-var combatLogs = document.getElementById("combatLogs");
+var combatUIHolder = document.getElementById("combatUI");
+var homeUIHolder = document.getElementById("homeUI");
+var beginFightButton = document.getElementById("beginFight");
+var settingsButton = document.getElementById("settingsOption");
+var background = document.getElementById('background');
 
-var p1mech = Mech.getSampleMech();
-var p2mech = Mech.getSampleMech();
+//hide unused menus
+combatUIHolder.classList.add("hidden");
 
-UIHandler.setContext(p1mech,p2mech);
-UIHandler.buildUI();
-/*
-actionList.append(Act.Action.getDiv());
-actionList.append(Act.Flail.getDiv());
+//temporary main menu code
+beginFightButton.addEventListener("click", function() {
+    combatUIHolder.classList.remove("hidden");
+    homeUIHolder.classList.add("hidden");
+    var p1mech = Mech.getSampleMech();
+    var p2mech = Mech.getSampleMech();
+    UIHandlerCombat.setContext(p1mech,p2mech);
+    UIHandlerCombat.buildUI();
+});
 
-for(var i = 0; i < 5; i++) {
-    p1status.append(p1mech.parts[i].getDiv());
+//background
+initializeBackground();
+var dash = new Dashing(background, Math.PI / 2);
+dash.color = "lavender";
+
+
+//keeping the canvas to the window size
+function initializeBackground() {
+    window.addEventListener('resize', resizeCanvas, false);
+    resizeCanvas();
 }
-*/
+function resizeCanvas() {
+    background.width = window.innerWidth;
+    background.height = window.innerHeight;
+}

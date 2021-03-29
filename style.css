@@ -2,10 +2,18 @@ html, button {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1em;
     text-align: left;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    box-sizing: content-box;
 }
 
 * {
     box-sizing: border-box;
+    z-index: 1;
+    position: relative;
 }
 
 [class*="col-"] {
@@ -53,7 +61,7 @@ html, button {
     display: block;
     width: 100%;
     text-decoration: none;
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.5);
     color: rebeccapurple;
     border: 2px solid rebeccapurple;
 }
@@ -76,19 +84,19 @@ html, button {
 }
 
 .menuItem.selectable, .menuItem.selectable .menuItem {
-    background-color: lavender;
+    background-color: rgba(230, 230, 250, 0.5);
     color: rebeccaPurple;
     border: 2px solid rebeccapurple;
 }
 
 .menuItem.selectable:hover, .menuItem.selectable:hover .menuItem {
-    background-color: rebeccapurple;
+    background-color: rgba(102, 51, 153, 0.5);
     color: lavender;
     border: 2px solid lavender;
 }
 
 .menuItem.chosen {
-    background-color: darkorchid;
+    background-color: rgba(153, 50, 204, 0.5);
     color: lavender;
     border: 2px solid lavender;
 }
@@ -111,4 +119,13 @@ html, button {
     background-color: black;
     transition-property: width;
     transition-duration: 0.5s;
+}
+
+.hidden {
+    display: none;
+}
+
+#background {
+    z-index: 0;
+    position: fixed;
 }

@@ -11,69 +11,44 @@
 </head>
 
 <body>
-    <div class="row">
-        <div id="combatLogs" class="menu col-8 log">Combat Logs</div>
-        <div id="hints" class="menu col-4">
-
+    <!--BACKGROUND-->
+    <canvas id="background"></canvas>
+    <!--HOME MENU UI-->
+    <span id="homeUI" style="text-align: center;">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <h1>AS ONE</h1>
+                <h4><i>First Draft</i></h4>
+                <div id="beginFight" class="menuItem selectable">
+                    <h1><b>ENTER THE CURTAIN</b></h1>
+                </div>
+                <div id="settingsOption" class="menuItem selectable">
+                    <h1><b>SETTINGS</b></h1>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div id="contextClue" class="col-12">Context Clue</div>
-    </div>
-    <div class="row">
-        <div id="p1status" class="menu col-3">Player 1 Status</div>
-        <div id="actionList" class="menu col-4">Action List</div>
-        <div id="queueHolder" class="menu col-2 row">
-            <div id="queueButtons"></div>
-            <div id="actionQueue">Action Queue</div>
+    </span>
+
+    <!--COMBAT UI-->
+    <span id="combatUI">
+        <div class="row">
+            <div id="combatLogs" class="menu col-8 log">Combat Logs</div>
+            <div id="hints" class="menu col-4"></div>
         </div>
-        <div id="p2status" class="menu col-3">Player 2 Status</div>
-    </div>
-    <div id="about">This is an in-dev version. Expect nothing.<br>
-        Game by Cactus<br>
-        Icons sourced from <a href="https://game-icons.net">game-icons.net</a> under <a
-            href="https://creativecommons.org/licenses/by/3.0/legalcode">CC BY 3.0</a>
-    </div>
-    <div id="todo">
-        TODO:
-        <ol>
-            <li>Make the game's combat playable enough for feedback.<ul>
-                    <li>Log combat messages</li>
-                    <li>simple enemy AI</li>
-                    <li>win/loss checking</li>
-                    <li>implement status effects: Shielding & X ray</li>
-                    <li>Attacks for head & legs</li>
-                </ul>
-            </li>
-
-            <li>Add some polish.<ul>
-                    <li>Mechanical:<ul>
-                            <li>more parts</li>
-                            <li>customizable mechs</li>
-                            <li>make enemies</li>
-                        </ul>
-                    </li>
-                    <li>Quality of Life:<ul>
-                            <li>clean up UI: better colors, animations, HP bars instead of fractions</li>
-                            <li>tooltips & navigation instructions</li>
-                            <li>keyboard support</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-
-            <li>roguelike shell of the game. (This bit is super malleable, fair warning)<ul>
-                    <li>FTL style map (or something else - the main thing to keep is that you navigate directly between
-                        encounters, instead of walking around in an overworld or something)</li>
-                    <li>difficulty scaling with progress</li>
-                    <li>also loot. which should also scale.</li>
-                    <li>storytelling primarily through item descriptions.</li>
-                    <li><i>MAYBE</i> non-combat encounters?</li>
-                    <li>"Eras"</li>
-                </ul>
-            </li>
-        </ol>
-    </div>
+        <div class="row">
+            <div id="contextClue" class="col-12">Context Clue</div>
+        </div>
+        <div class="row">
+            <div id="p1status" class="menu col-3">Player 1 Status</div>
+            <div id="actionList" class="menu col-4">Action List</div>
+            <div id="queueHolder" class="menu col-2 row">
+                <div id="queueButtons"></div>
+                <div id="actionQueue">Action Queue</div>
+            </div>
+            <div id="p2status" class="menu col-3">Player 2 Status</div>
+        </div>
+    </span>
 </body>
 
 </html>
