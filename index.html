@@ -13,6 +13,7 @@
 <body>
     <!--BACKGROUND-->
     <canvas id="background"></canvas>
+
     <!--HOME MENU UI-->
     <span id="homeUI" style="text-align: center;">
         <div class="row">
@@ -23,7 +24,7 @@
                 <div id="beginFight" class="menuItem selectable">
                     <h1><b>ENTER THE CURTAIN</b></h1>
                 </div>
-                <div id="settingsOption" class="menuItem selectable">
+                <div id="settingsOption" class="menuItem selectable hidden">
                     <h1><b>SETTINGS</b></h1>
                 </div>
             </div>
@@ -31,7 +32,7 @@
     </span>
 
     <!--COMBAT UI-->
-    <span id="combatUI">
+    <span id="combatUI" class="hidden">
         <div class="row">
             <div id="combatLogs" class="menu col-8 log">Combat Logs</div>
             <div id="hints" class="menu col-4"></div>
@@ -49,6 +50,9 @@
             <div id="p2status" class="menu col-3">Player 2 Status</div>
         </div>
     </span>
+
+    <!--SETTINGS UI-->
+    <span id="settingsUI"></span>
 </body>
 
 </html>
